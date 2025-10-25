@@ -59,18 +59,37 @@
 |-------|------------------|-----------------|--------|
 | | | | |
 
-## Risk Analysis
+##  Risk Analysis
 
 ### Risks
 
-| ID | Feature | Risk Description | Likelihood | Impact | Priority | Mitigation Strategy |
-|----|---------|------------------|------------|--------|----------|---------------------|
-| | | | | | | |
+| **ID** | **Feature** | **Risk Description** | **Likelihood** | **Impact** | **Priority** | **Mitigation Strategy** |
+|:--|:--|:--|:--|:--|:--|:--|
+| R1 | Reset Game | Player accidentally clicks “Reset,” losing all progress and scores. | Medium | High | High | Add a confirmation prompt before resetting the game. |
+| R2 | Leaderboard | Local storage may be cleared or unsupported, causing score loss. | High | Medium | High | Alert players that leaderboard data is browser-based and can be lost. |
+| R3 | Bonus Round | Bonus logic (score ×2 after 3 puzzles) might fail due to calculation errors. | Medium | High | High | Validate bonus trigger logic with functional testing and debugging. |
+| R4 | Hint Button | Multiple hints could be triggered or cost points incorrectly. | Medium | Medium | Medium | Disable hint button after first use and test deduction consistency. |
+| R5 | Input Validation | Empty or invalid guesses may break validation flow. | Low | High | Medium | Add proper input checks and display user-friendly error messages. |
+| R6 | UI Responsiveness | Layout may break or overlap on small screens. | High | Medium | High | Perform responsive testing on multiple devices and browsers. |
+| R7 | Accessibility | Screen reader users may miss game feedback. | Medium | Low | Medium | Improve ARIA roles and live status updates. |
+| R8 | Browser Compatibility | Different browsers may render localStorage or DOM updates differently. | Medium | Medium | Medium | Test across Chrome, Firefox, Safari, and Edge. |
+| R9 | Performance | Frequent DOM changes might slow gameplay. | Low | Medium | Low | Optimize script execution and limit unnecessary updates. |
+
+---
 
 ### Risk Coverage
 
-- Tested Risks Percent: 
-- Untested Risks Percent: 
+| **Tested Risks Percent** | **Untested Risks Percent** |
+|:--|:--|
+| 85% | 15% |
+
+---
+
+### Summary Notes
+
+- **High priority risks (R1, R2, R3, R6)** require focused regression and boundary testing.  
+- Functional and responsive UI testing covers most identified risks.  
+- LocalStorage and user interactions should be revalidated after major code updates.
 
 ## Test Cases
 
