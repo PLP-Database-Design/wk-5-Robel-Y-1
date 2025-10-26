@@ -85,7 +85,7 @@ As **Test Manager**, my objective is to:
 |-------|------------------|-----------------|--------|
 | **Test Planning** | Oct 22–23 | Oct 22–23 | ✅ Completed |
 | **Risk Analysis** | Oct 24–25 | Oct 24–25 | ✅ Completed |
-| **Test Design & Execution** | Oct 25–27 |  | ✅ Completed |
+| **Test Design & Execution** | Oct 25–27 | Oct 25–26 | ✅ Completed |
 | **Defect Review & Metrics Tracking** | Oct 27 |  | ☐ Pending |
 | **Final Report Compilation** | Oct 28 |  | ☐ Scheduled |
 
@@ -144,7 +144,7 @@ The risk analysis highlights that **data persistence and score accuracy** are th
 
 ## Test design and execution
 
-As the Test Executor, my role focused on executing all designed test cases, capturing actual results, logging defects in GitHub Issues, and validating bug fixes through re-tests. 
+As the **Test Executor**, my role focused on executing all designed test cases, capturing actual results, logging defects in GitHub Issues, and validating bug fixes through re-tests. 
 
 ### Objectives
 - Execute all planned functional, negative, and usability test cases aligned with risk priorities.
@@ -156,135 +156,111 @@ As the Test Executor, my role focused on executing all designed test cases, capt
 Below are the designed and executed test cases for the Word Puzzle Game Plus system.
 Testing focused on functionality, logic correctness, risk-prone areas, and usability.
 
-**TC-01**
+#### **TC-01 — Reset Game**  
+**Feature:** Reset Game  
+**Objective:** Verify that resetting clears score and progress instantly.  
+**Steps:**  
+1. Play two puzzles to accumulate score.  
+2. Click **“Reset Game”** button.  
+3. Observe score and puzzle state.  
+**Expected Result:** Score resets to **0** and the first puzzle appears again.  
+**Risk Priority:** **High**  
 
-Feature: Reset Game
-Objective: Verify that resetting clears score and progress instantly.
+#### **TC-02 — Bonus Round (Score Doubling)**  
+**Feature:** Bonus Round  
+**Objective:** Verify score doubling after every 3 puzzles.  
+**Steps:**  
+1. Solve 3 puzzles correctly.  
+2. Check score before and after 3rd completion.  
+**Expected Result:** Score is doubled automatically after the 3rd puzzle.  
+**Risk Priority:** **High**  
 
-Steps:
-Play two puzzles to accumulate score.
-Click “Reset Game” button.
-Observe score and puzzle state.
+#### **TC-03 — Leaderboard Sorting**  
+**Feature:** Leaderboard  
+**Objective:** Verify top-3 sorting logic.  
+**Steps:**  
+1. Achieve scores **5**, **12**, and **8**.  
+2. Open leaderboard view.  
+**Expected Result:** Scores sorted in descending order → **12, 8, 5**.  
+**Risk Priority:** **High**  
 
-Expected: Score resets to 0 and first puzzle appears again.
-Risk Priority: High
+#### **TC-04 — Hint System Deduction**  
+**Feature:** Hint System  
+**Objective:** Ensure hint deducts correct points from total score.  
+**Steps:**  
+1. Play a puzzle with score **10**.  
+2. Click **“Hint.”**  
+3. Check updated score.  
+**Expected Result:** **2 points deducted → new score = 8.**  
+**Risk Priority:** **Medium**  
 
-**TC-02**
+#### **TC-05 — Bonus Round Trigger Frequency**  
+**Feature:** Bonus Round  
+**Objective:** Validate that bonus triggers exactly every 3 puzzles.  
+**Steps:**  
+1. Solve puzzles **1–5** in sequence.  
+2. Monitor bonus triggers.  
+**Expected Result:** Bonus applies after **puzzle 3** and **puzzle 6** only.  
+**Risk Priority:** **High**  
 
-Feature: Bonus Round
-Objective: Verify score doubling after every 3 puzzles.
+#### **TC-06 — Empty Input Validation (Negative Test)**  
+**Feature:** Input Field Validation  
+**Objective:** Verify that submitting an empty input shows an error message.  
+**Steps:**  
+1. Click **“Submit”** without typing any guess.  
+2. Observe system response.  
+**Expected Result:** Validation error displayed — “Please enter a word.”  
+No crash or score change.  
+**Risk Priority:** **Medium**  
 
-Steps:
-Solve 3 puzzles correctly.
-Check score before and after 3rd completion.
+#### **TC-07 — Reset Button Stress (Negative Test)**  
+**Feature:** Reset Button  
+**Objective:** Check game behavior when clicking “Reset” repeatedly.  
+**Steps:**  
+1. Click **“Reset Game”** button 3–4 times quickly.  
+2. Observe any lag or errors.  
+**Expected Result:** Game resets once; no freezing or multiple triggers.  
+**Risk Priority:** **High**  
 
-Expected: Score is doubled automatically after 3rd puzzle.
-Risk Priority: High
+#### **TC-08 — Keyboard Accessibility (Usability Test)**  
+**Feature:** Button Focus / Navigation  
+**Objective:** Verify accessibility for keyboard navigation.  
+**Steps:**  
+1. Use **Tab** key to move through buttons (Submit, Hint, Reset).  
+2. Check focus visibility.  
+**Expected Result:** Each button gets a clear visual outline when focused.  
+**Risk Priority:** **Low**  
 
-**TC-03**
+#### **TC-09 — Leaderboard Persistence**  
+**Feature:** Leaderboard  
+**Objective:** Ensure leaderboard data saves across sessions.  
+**Steps:**  
+1. Play and score **15 points.**  
+2. Refresh browser or reopen game.  
+**Expected Result:** Score remains visible in the **top 3 leaderboard list.**  
+**Risk Priority:** **High**  
 
-Feature: Leaderboard
-Objective: Verify top-3 sorting logic.
+#### **TC-10 — Score Calculation Limits**  
+**Feature:** Score Calculation  
+**Objective:** Confirm no negative score appears after using multiple hints.  
+**Steps:**  
+1. Use **Hint** 4 times without solving any puzzle.  
+2. Check current score.  
+**Expected Result:** Score cannot go below zero (**minimum = 0**).  
+**Risk Priority:** **High**  
 
-Steps:
-Achieve scores 5, 12, and 8.
-Open leaderboard view.
-
-Expected: Scores sorted in descending order → 12, 8, 5.
-Risk Priority: High
-
-**TC-04**
-Feature: Hint System
-Objective: Ensure hint deducts correct points from total score.
-
-Steps:
-Play a puzzle with score 10.
-Click “Hint”.
-Check updated score.
-
-Expected: 2 points deducted → new score = 8.
-Risk Priority: Medium
-
-**TC-05**
-
-Feature: Bonus Round
-Objective: Validate that bonus triggers exactly every 3 puzzles.
-
-Steps:
-Solve puzzles 1–5 in sequence.
-Monitor bonus triggers.
-
-Expected: Bonus applies after puzzle 3 and puzzle 6 only.
-Risk Priority: High
-
-**TC-06** (Negative Test)
-
-Feature: Input Field Validation
-Objective: Verify that submitting an empty input shows an error message.
-
-Steps:
-Click “Submit” without typing any guess.
-Observe system response.
-
-Expected: Validation error displayed — “Please enter a word.” No crash or score change.
-Risk Priority: Medium
-
-**TC-07** (Negative Test)
-
-Feature: Reset Button
-Objective: Check game behavior when clicking “Reset” repeatedly.
-
-Steps:
-Click “Reset Game” button 3–4 times quickly.
-Observe any lag or errors.
-
-Expected: Game resets once; no freezing or multiple triggers.
-Risk Priority: High
-
-**TC-08** (Usability Test)
-
-Feature: Button Focus / Navigation
-Objective: Verify accessibility for keyboard navigation.
-
-Steps:
-Use Tab key to move through buttons (Submit, Hint, Reset).
-Check focus visibility.
-
-Expected: Each button gets a clear visual outline on focus.
-Risk Priority: Low
-
-**TC-09**
-
-Feature: Leaderboard Persistence
-Objective: Ensure leaderboard data saves across sessions.
-
-Steps:
-Play and score 15 points.
-Refresh browser or reopen game.
-
-Expected: Score remains visible in top 3 leaderboard list.
-Risk Priority: High
-
-**TC-10**
-
-Feature: Score Calculation
-Objective: Confirm no negative score appears after using multiple hints.
-
-Steps:
-Use hint 4 times without solving any puzzle.
-Check current score.
-
-Expected: Score cannot go below zero (minimum = 0).
-Risk Priority: High
+---
 
 ### Summary of Test Types:
 
-Type	Count	Examples
-Risk-Based	6	TC-01, TC-02, TC-03, TC-05, TC-09, TC-10
-Negative	2	TC-06, TC-07
-Usability	1	TC-08
+| **Type** | **Count** | **Examples** |
+|-----------|------------|--------------|
+| **Risk-Based** | 6 | TC-01, TC-02, TC-03, TC-05, TC-09, TC-10 |
+| **Negative** | 2 | TC-06, TC-07 |
+| **Usability** | 1 | TC-08 |
 
-### Summary:
+
+### Summary
 Through systematic testing and detailed reporting, I verified the game’s key mechanics—such as score resetting, leaderboard accuracy, and bonus round logic—ensuring that Word Puzzle Game Plus met functional expectations and delivered a consistent user experience.
 
 ---
@@ -301,14 +277,15 @@ All identified defects were logged and tracked on GitHub for traceability and ev
 - [#3 –Negative Score Appears After Multiple Hints ](https://github.com/PLP-Database-Design/wk-5-Robel-Y-1/issues/4#issue-3553780108)  
   *Severity:* Medium | *Risk:* R2 (Score Calculation)
 
-📎 *Each issue includes: steps to reproduce, expected vs. actual result, severity, risk mapping, and screenshot evidence.*
+ *Each issue includes: steps to reproduce, expected vs. actual result, severity, risk mapping, and screenshot evidence.*
 
 ### Summary of Findings
 - The Leaderboard persistence defect - was the most critical, linked to high data integrity risk (R2).
 - Reset functionality defect - revealed a usability gap requiring confirmation before progress loss.
 - Negative Score Appears After Multiple Hints -affected gameplay logic but did not cause system crashes.
 
-All defects were documented with reproducible steps, screenshots, and assigned severity in GitHub. Fixes were validated through regression testing.
+*All defects were documented with reproducible steps, screenshots, and assigned severity in GitHub. Fixes were validated through regression testing.*
+
 ---
 
 ## Metrics
