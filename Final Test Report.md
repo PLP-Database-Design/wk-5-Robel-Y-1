@@ -14,7 +14,8 @@
 | Role | Name | Responsibilities |
 |------|------|------------------|
 | **Test Manager** | **Robel** | Planning, scheduling, coordination, metric tracking |
-| Risk Analyst | | Risk identification, prioritization, test design linkage |
+| **Risk Analyst** | **Josphat Chege (DvChege)** | Risk identification, prioritization, test design linkage |
+
 | Test Executor | | Execution, evidence capture, defect logging |
 
 ---
