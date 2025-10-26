@@ -85,7 +85,7 @@ As **Test Manager**, my objective is to:
 | Phase | Planned Duration | Actual Duration | Status |
 |-------|------------------|-----------------|--------|
 | **Test Planning** | Oct 22–23 | Oct 22–23 | ✅ Completed |
-| **Risk Analysis** | Oct 24–25 |  | ☐ Pending |
+| **Risk Analysis** | Oct 24–25 |  | Oct 24-25 |✅ Completed |
 | **Test Design & Execution** | Oct 25–27 |  | ☐ In Progress |
 | **Defect Review & Metrics Tracking** | Oct 27 |  | ☐ Pending |
 | **Final Report Compilation** | Oct 28 |  | ☐ Scheduled |
