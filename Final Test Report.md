@@ -92,8 +92,53 @@ As **Test Manager**, my objective is to:
 ---
 
 ## Risk Analysis
+##  Risk Analysis  
 
-*(Handled by the Risk Analyst — section left for teammate.)*
+As **Risk Analyst**, my objective is to identify, assess, and prioritize risks that could affect the quality and success of the Word Puzzle Game Plus project. The analysis ensures that high-impact areas receive proper testing attention and that mitigation plans are in place.  
+
+###  Objectives  
+- Identify potential risks that could disrupt testing or gameplay.  
+- Evaluate the likelihood and impact of each risk.  
+- Recommend mitigation strategies and link them to relevant test cases.  
+
+---
+
+###  Risk Identification and Assessment  
+
+| Risk ID | Description | Likelihood | Impact | Risk Level | Mitigation Strategy |
+|----------|--------------|-------------|----------|--------------|---------------------|
+| **R1** | Game does not reset scores correctly after pressing “Reset” | Medium | High | **High** | Conduct multiple reset tests and verify score persistence is cleared in localStorage |
+| **R2** | Leaderboard fails to store top scores properly | High | High | **Critical** | Validate localStorage entries after each game and perform regression testing |
+| **R3** | Bonus Round logic miscalculates double score | Medium | Medium | **Moderate** | Implement functional test cases for every third puzzle; verify calculation accuracy |
+| **R4** | Game performance slows down during multiple puzzle rounds | Low | Medium | **Low** | Monitor browser console performance and memory usage |
+| **R5** | Unclear UI feedback when resetting or starting new round | Medium | Low | **Moderate** | Conduct usability testing to ensure user messages and alerts are visible |
+
+---
+
+###  Risk Prioritization Summary  
+
+| Risk Level | Count | Testing Focus |
+|-------------|--------|----------------|
+| **Critical** | 1 | Must be tested first (Leaderboard logic) |
+| **High** | 1 | Second priority — affects score integrity |
+| **Moderate** | 2 | Covered in functional and UI testing |
+| **Low** | 1 | Optional if time allows |
+
+---
+
+###  Risk-Based Testing Approach  
+Testing will follow a **risk-based prioritization** model:  
+1. Begin with **Critical and High** risks (Leaderboard and Reset Game).  
+2. Continue with **Moderate** UI and logic risks.  
+3. Perform exploratory testing on Low-priority risks if time permits.  
+
+Each identified risk is linked to corresponding test cases and defect reports to ensure traceability and control.  
+
+---
+
+###  Summary  
+The risk analysis highlights that **data persistence and score accuracy** are the highest-impact areas for the Word Puzzle Game Plus. Focusing test efforts here will reduce the likelihood of major user experience issues and improve system reliability before release.
+
 
 ---
 
