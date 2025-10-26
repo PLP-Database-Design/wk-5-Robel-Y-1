@@ -161,7 +161,7 @@ Testing focused on functionality, logic correctness, risk-prone areas, and usabi
 **Objective:** Verify that resetting clears score and progress instantly.  
 **Steps:**  
 1. Play two puzzles to accumulate score.  
-2. Click **“Reset”** button.  
+2. Click **“Reset Game”** button.  
 3. Observe score and puzzle state.  
 **Expected Result:** Score resets to **0** and the first puzzle appears again.  
 **Risk Priority:** **High**  
@@ -217,7 +217,7 @@ No crash or score change.
 **Feature:** Reset Button  
 **Objective:** Check game behavior when clicking “Reset” repeatedly.  
 **Steps:**  
-1. Click **“Reset”** button 3–4 times quickly.  
+1. Click **“Reset Game”** button 3–4 times quickly.  
 2. Observe any lag or errors.  
 **Expected Result:** Game resets once; no freezing or multiple triggers.  
 **Risk Priority:** **High**  
