@@ -216,7 +216,7 @@ Any schedule adjustments or test case updates must be approved by the Test Manag
 | Name | Role | Initials | Date |
 |------|------|-----------|------|
 | **Robel** | **Test Manager** | **R.B.** | **2025-10-26** |
-|  | Risk Analyst |  |  |
+| **Josphat Chege** | **Risk Analyst** | **J.C.** | **2025-10-25** |
 |  | Test Executor |  |  |
 
 ---
