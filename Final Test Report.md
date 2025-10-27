@@ -86,8 +86,8 @@ As **Test Manager**, my objective is to:
 | **Test Planning** | Oct 22–23 | Oct 22–23 | ✅ Completed |
 | **Risk Analysis** | Oct 24–25 | Oct 24–25 | ✅ Completed |
 | **Test Design & Execution** | Oct 25–27 | Oct 25–26 | ✅ Completed |
-| **Defect Review & Metrics Tracking** | Oct 27 |  |✅ Completed |
-| **Final Report Compilation** | Oct 28 |  | ✅ Completed |
+| **Defect Review & Metrics Tracking** | Oct 27 | Oct 27 |✅ Completed |
+| **Final Report Compilation** | Oct 28 | Oct 27 | ✅ Completed |
 
 ---
 
@@ -313,8 +313,8 @@ Progress and results will be recorded in a shared Google Sheet linked to GitHub 
 |-------|--------------|----------------|-----------|--------|
 | **Planning** | Test Plan + Schedule | Completed | 0% | **Robel** |
 | **Coordination** | Task Distribution + GitHub Setup | Completed | 0% | **Robel** |
-| **Progress Tracking** | Weekly Report + Metrics | In Progress | 10% | **Robel** |
-| **Report Compilation** | Final Consolidated Report | Pending | - | **Robel** |
+| **Progress Tracking** | Weekly Report + Metrics | completed | 0% | **Robel** |
+| **Report Compilation** | Final Consolidated Report | Completed | 0% | **Robel** |
 
 **Progress Tracking Method:**  
 - GitHub Issues board for test execution and defect status.  
